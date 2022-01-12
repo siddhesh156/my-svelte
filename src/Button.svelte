@@ -2,9 +2,10 @@
 
 <script>
 import { onMount } from "svelte";
+let data = []
 
     onMount(()=>{
-        let data = []
+      
 	const fetchSomething = async () => {
 		const response = await fetch('https://jsonplaceholder.typicode.com/posts')
 		const json = await response.json()
@@ -16,6 +17,7 @@ import { onMount } from "svelte";
    
 </script>
 <h1>Hello Sevlet</h1>
+<h3>{data.length > 0 ? data[0].body : null}</h3>
 <button class="btn">my-button</button>
 
 <style>
